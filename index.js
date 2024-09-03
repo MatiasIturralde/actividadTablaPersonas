@@ -2,7 +2,9 @@
 // window - ventana del navegador
 window.onload = ()=>{
     console.log("hola");
-   let divElement =  document.querySelector("#elemento");// seleccionar un elemento del documento usando selector css
+   let divElement =  document.querySelector("#elemento"); // seleccionar un elemento del documento usando selector css
+   let tBody = document.querySelector("#cuerpoTabla");
+
    let personas = [
     { nombre: "Juan", apellido: "Pérez", edad: 25 },
     { nombre: "María", apellido: "González", edad: 30 },
@@ -19,12 +21,16 @@ window.onload = ()=>{
   console.log(personas[0].edad)
 
     for(let index =0; index <=9; index= index+1){
-        console.log(personas[index].edad);
-        divElement.innerHTML+=`<div>
-                                <p>${personas[index].nombre}</p>
-                                 <p>${personas[index].edad}</p>
-                                 </div>
-                                `;
+        console.log(personas[index].edad); //edad
+        tBody.innerHTML+=`<tr>
+                          <td>${personas[index].nombre}</td>
+                          <td>${personas[index].apellido}</td>
+                          <td>${personas[index].edad}</td>
+                          </tr>
+                          `;
+
+
+      
     }
 }
 
@@ -34,5 +40,4 @@ window.onload = ()=>{
 
 
 //element - elemento html 
-
 
